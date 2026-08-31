@@ -93,18 +93,49 @@
       animation: reveal .7s ease-out 2.9s forwards;
     }
 
-    .candle {
-      position: absolute;
-      width: 7px;
-      height: 42px;
-      left: 50%;
-      top: -48px;
-      z-index: 10;
-      opacity: 0;
-      transform: translateX(-50%);
-      background: repeating-linear-gradient(to bottom, #fff 0 7px, #eee 7px 11px);
-      animation: reveal .7s ease-out 3.5s forwards;
-    }
+   <style>
+  .number-candles {
+    position: absolute;
+    left: 50%;
+    top: -57px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: reveal .7s ease-out 3.5s forwards;
+  }
+
+  .number-candle {
+    position: relative;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    background: repeating-linear-gradient(
+      to bottom,
+      #fff 0 7px,
+      #eee 7px 11px
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .number-candle .flame {
+    position: absolute;
+    width: 13px;
+    height: 22px;
+    left: 50%;
+    top: -23px;
+    transform: translateX(-50%);
+    background: #ff8d00;
+    border-radius: 50%;
+    box-shadow: 0 0 18px #fc3;
+    animation: flicker .5s infinite alternate;
+  }
+
 
     .flame {
       position: absolute;
